@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+<h2>All CC Locations</h2>
+<ul class="heroes">
+	<li *ngFor="let location of locations" (click)="onSelect(location)"
+    		[class.selected]="location === selectedLocation">
+    	<span class="badge">{{location.id}}</span> {{location.name}}
+    </li>
+</ul>
+<my-location-detail [location]="selectedLocation"></my-location-detail>
