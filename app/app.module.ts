@@ -4,6 +4,7 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import { LocationDetailComponent } from './location-detail.component';
+import { LocationsComponent } from './locations.component';
 
 @NgModule({
   imports: [ 
@@ -12,6 +13,7 @@ import { LocationDetailComponent } from './location-detail.component';
   ],
   declarations: [ 
     AppComponent,
+    LocationsComponent,
     LocationDetailComponent
   ],
   bootstrap: [ AppComponent ]
