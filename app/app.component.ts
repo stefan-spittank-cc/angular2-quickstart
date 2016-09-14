@@ -3,7 +3,11 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `
     <h1>{{title}}</h1>
-    <my-locations></my-locations>
+    <nav>
+      <a routerLink="/locations">Location</a>
+      <a routerLink="/dashboard">Dashboard</a>
+    </nav>
+    <router-outlet></router-outlet>
   `
 })
 export class AppComponent {

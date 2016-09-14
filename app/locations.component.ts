@@ -7,8 +7,7 @@ import { LocationService } from './location.service';
 @Component({
     selector: 'my-locations',
     templateUrl: 'app/locations.component.html',
-    styleUrls: ['app/locations.component.css'],
-    providers: [ LocationService ]
+    styleUrls: ['app/locations.component.css']
 })
 
 export class LocationsComponent implements OnInit { 
