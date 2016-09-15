@@ -21,7 +21,7 @@ export class LocationSearchComponent implements OnInit {
 	private searchTerms = new Subject<string>();
 
 	constructor(
-		private heroSearchService: LocationSearchService,
+		private locationSearchService: LocationSearchService,
 		private router: Router) {}
 		// Push a search term into the observable stream.
 		search(term: string): void {
@@ -34,8 +34,8 @@ export class LocationSearchComponent implements OnInit {
 			.distinctUntilChanged()   // ignore if next search term is same as previous
 			.switchMap(term => term   // switch to new observable each time
 				// return the http search observable
-				? this.heroSearchService.search(term)
-				// or the observable of empty heroes if no search term
+				? this.locationSearchService.search(term)
+				// or the observable of empty locations if no search term
 				: Observable.of<Location[]>([]))
 			.catch(error => {
 				// TODO: real error handling

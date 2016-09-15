@@ -7,7 +7,7 @@
   </button>
 </div>
 
-<ul class="heroes">
+<ul class="locations">
 	<li *ngFor="let location of locations" (click)="onSelect(location)"
     		[class.selected]="location === selectedLocation">
     	<span class="badge">{{location.id}}</span>
@@ -18,7 +18,7 @@
 </ul>
 <div *ngIf="selectedLocation">
   <h2>
-    {{selectedLocation.name | uppercase}} is my hero
+    {{selectedLocation.name | uppercase}} is my favorite
   </h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>
