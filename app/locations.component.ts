@@ -36,4 +36,24 @@ export class LocationsComponent implements OnInit {
    		let link = ['/detail', this.selectedLocation.id];
 		this.router.navigate(link);
     }
+
+    add (name: string): void {
+        name = name.trim();
+        if (!name) return;
+
+        this.locationService.create(name).then(location => {
+            this.locations.push(location);
+            this.selectedLocation = null;
+        });
+    }
+
+    delete (location: Location) {
+        this.locationService.delete(location.id).then(() => {
+            let ix = this.locations.indexOf(location);
+            this.locations.splice(ix, 1);
+            if (this.selectedLocation === location) {
+                this.selectedLocation = null;
+            }
+        });
+    }
 }

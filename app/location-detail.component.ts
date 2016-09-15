@@ -28,6 +28,12 @@ export class LocationDetailComponent implements OnInit {
 	goBack(): void {
   		window.history.back();
 	}
+	save() : void {
+		this.locationService.update(this.location).then(() => {
+			this.goBack();
+		});
+		
+	}
 
 	@Input()
 	location: Location;

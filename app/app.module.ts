@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+
 import { AppComponent }  from './app.component';
 import { LocationDetailComponent } from './location-detail.component';
 import { LocationsComponent } from './locations.component';
@@ -15,6 +19,7 @@ import { LocationService } from './location.service';
 		BrowserModule,
 		FormsModule,
 		HttpModule,
+		InMemoryWebApiModule.forRoot(InMemoryDataService),
 		routing
 	],
 	declarations: [ 

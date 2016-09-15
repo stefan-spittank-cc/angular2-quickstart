@@ -1,8 +1,19 @@
 <h2>All CC Locations</h2>
+
+<div>
+  <label>Location name:</label> <input #locationName />
+  <button (click)="add(locationName.value); locationName.value=''">
+    Add
+  </button>
+</div>
+
 <ul class="heroes">
 	<li *ngFor="let location of locations" (click)="onSelect(location)"
     		[class.selected]="location === selectedLocation">
-    	<span class="badge">{{location.id}}</span> {{location.name}}
+    	<span class="badge">{{location.id}}</span>
+      <span>{{location.name}}</span>
+      <button class="delete"
+            (click)="delete(location); $event.stopPropagation()">x</button>
     </li>
 </ul>
 <div *ngIf="selectedLocation">
