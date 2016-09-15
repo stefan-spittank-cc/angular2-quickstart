@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LocationsComponent }      from './locations.component';
 import { DashboardComponent } from "./dashboard.component";
+import { LocationDetailComponent } from './location-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -17,6 +18,10 @@ const appRoutes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: 'detail/:id',
+    component: LocationDetailComponent
   }
 ];
 

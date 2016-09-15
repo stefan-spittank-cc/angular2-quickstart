@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 import { Location } from './location';
 import { LocationService } from './location.service';
@@ -11,9 +12,9 @@ import { LocationService } from './location.service';
 })
 
 export class LocationsComponent implements OnInit { 
-    constructor(private locationService: LocationService) {
+    constructor(private locationService: LocationService,
+                private router: Router) { }
 
-    }
     ngOnInit(): void {
         this.getLocations();
     }
@@ -29,5 +30,10 @@ export class LocationsComponent implements OnInit {
         this.locationService.getLocations().then(locations => {
             this.locations = locations;
         })
+    }
+
+    gotoDetail () :void {
+   		let link = ['/detail', this.selectedLocation.id];
+		this.router.navigate(link);
     }
 }
